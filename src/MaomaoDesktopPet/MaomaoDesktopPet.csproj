@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon></ApplicationIcon>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
     <AssemblyName>MaomaoDesktopPet</AssemblyName>
     <RootNamespace>MaomaoDesktopPet</RootNamespace>
     <Product>毛毛桌宠</Product>
@@ -14,6 +14,9 @@
 
   <ItemGroup>
     <Content Include="Assets\Pet\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\picture\deskpet_transparent_frames\*.png"
+             Link="Assets\Pet\%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

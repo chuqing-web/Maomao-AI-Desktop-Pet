@@ -49,13 +49,15 @@ public partial class MainWindow : Window
         var candidates = new[]
         {
             Path.Combine(baseDir, "Assets", "Pet"),
-            Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "Assets", "Pet")),
-            Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "..", "..", "picture", "frames"))
+            Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "..", "..", "picture", "deskpet_transparent_frames")),
+            Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "..", "picture", "deskpet_transparent_frames")),
+            Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "picture", "deskpet_transparent_frames"))
         };
 
         foreach (var path in candidates)
         {
-            if (Directory.Exists(path))
+            if (Directory.Exists(path) &&
+                Directory.EnumerateFiles(path, "idle_*.png").Any())
                 return path;
         }
 

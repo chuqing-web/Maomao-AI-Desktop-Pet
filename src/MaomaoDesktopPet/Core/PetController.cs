@@ -47,7 +47,11 @@ public sealed class PetController
     public void EndDrag()
     {
         BubbleChanged?.Invoke("啪！");
-        SetState(PetState.Idle);
+        // 落地帧：优先 drop，没有则回 Idle
+        var drop = _loader.GetByPrefixes("drop", ["inter_drop_"], PetState.Idle);
+        _state = PetState.Idle;
+        _animator.SetFrames(drop, 6);
+        ScheduleReturnIdle(500);
         ScheduleClearBubble(1200);
     }
 
@@ -63,6 +67,7 @@ public sealed class PetController
             _clickStreak = 1;
         _lastClickUtc = now;
 
+        var mash = _clickStreak >= 8;
         var text = _clickStreak switch
         {
             1 => "嗯？",
@@ -72,8 +77,8 @@ public sealed class PetController
         };
 
         BubbleChanged?.Invoke(text);
-        _clickStateUntilUtc = now.AddMilliseconds(900);
-        SetState(PetState.Click);
+        _clickStateUntilUtc = now.AddMilliseconds(mash ? 1100 : 900);
+        SetState(PetState.Click, mash);
     }
 
     public void Tick()
@@ -123,18 +128,30 @@ public sealed class PetController
         }
     }
 
-    private void SetState(PetState state)
+    private void SetState(PetState state, bool mashClick = false)
     {
         _state = state;
         var fps = state switch
         {
-            PetState.Walk => 10,
-            PetState.Drag => 8,
-            PetState.Click => 8,
-            PetState.Sleep => 4,
-            _ => 6
+            PetState.Walk => 8,
+            PetState.Drag => 6,
+            PetState.Click => 6,
+            PetState.Sleep => 3,
+            _ => 5
         };
-        _animator.SetFrames(_loader.GetFrames(state), fps);
+        _animator.SetFrames(_loader.GetFrames(state, mashClick), fps);
+    }
+
+    private void ScheduleReturnIdle(int ms)
+    {
+        var timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(ms) };
+        timer.Tick += (_, _) =>
+        {
+            timer.Stop();
+            if (_state != PetState.Drag)
+                SetState(PetState.Idle);
+        };
+        timer.Start();
     }
 
     private void ScheduleClearBubble(int ms)
