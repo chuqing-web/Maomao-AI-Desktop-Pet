@@ -1,0 +1,79 @@
+## .NET / Visual Studio
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.vspscc
+*.vssscc
+.vs/
+*.DotSettings.user
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Publish / Installer
+publish/
+*.msi
+*.msix
+*.appx
+*.appxbundle
+
+## Test / coverage
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml
+coverage*
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## IDE / editors
+.idea/
+*.swp
+*~
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+## Secrets / local env
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+appsettings.*.local.json
+
+## Local tool caches
+.dotnet/
+.packages/
+node_modules/
