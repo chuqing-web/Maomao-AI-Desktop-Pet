@@ -5,12 +5,14 @@
 > A living companion on your Windows desktop — cute, interactive, and growing into a full AI pet.
 
 <p align="center">
-  <img src="picture/Display%20Images1.png" alt="Maomao showcase" width="46%" />
-  &nbsp;&nbsp;
-  <img src="picture/Display%20Images2.png" alt="Desktop menu showcase" width="46%" />
+  <img src="picture/Display%20Images1.png" alt="Maomao character showcase" width="520" />
 </p>
+<p align="center"><sub>Meet Maomao — your desktop companion</sub></p>
 
-<p align="center"><sub>Character bubble · Right-click menu on the desktop</sub></p>
+<p align="center">
+  <img src="picture/Display%20Images2.png" alt="Desktop right-click menu" width="360" />
+</p>
+<p align="center"><sub>Right-click the pet to open the full menu</sub></p>
 
 ---
 

@@ -5,12 +5,14 @@
 > 住在 Windows 桌面上的小伙伴——可爱、可互动，并逐步成长为完整的 AI 桌宠。
 
 <p align="center">
-  <img src="picture/Display%20Images1.png" alt="毛毛展示" width="46%" />
-  &nbsp;&nbsp;
-  <img src="picture/Display%20Images2.png" alt="桌面菜单展示" width="46%" />
+  <img src="picture/Display%20Images1.png" alt="毛毛角色展示" width="520" />
 </p>
+<p align="center"><sub>认识毛毛 —— 你的桌面小伙伴</sub></p>
 
-<p align="center"><sub>角色气泡 · 桌面右键菜单</sub></p>
+<p align="center">
+  <img src="picture/Display%20Images2.png" alt="桌面右键菜单" width="360" />
+</p>
+<p align="center"><sub>右键桌宠打开完整菜单</sub></p>
 
 ---
 
