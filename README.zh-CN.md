@@ -4,70 +4,84 @@
 
 > 住在 Windows 桌面上的小伙伴——可爱、可互动，并逐步成长为完整的 AI 桌宠。
 
-![毛毛展示](picture/Display%20Images1.png)
+<p align="center">
+  <img src="picture/Display%20Images1.png" alt="毛毛展示" width="46%" />
+  &nbsp;&nbsp;
+  <img src="picture/Display%20Images2.png" alt="桌面菜单展示" width="46%" />
+</p>
 
-![桌面菜单展示](picture/Display%20Images2.png)
+<p align="center"><sub>角色气泡 · 桌面右键菜单</sub></p>
 
 ---
 
 ## 这是什么？
 
-**毛毛 AI 桌宠** 是一款 Windows 桌面陪伴程序。毛毛不只是循环播放的动图，而是按长期桌面伙伴来设计：
-
-- **陪伴感** — 透明置顶，真正“住在”桌面上  
-- **互动** — 点击、拖拽、喂食、摸摸、聊天、小游戏  
-- **养成** — 心情、精力、好感、换装、房间、收藏  
-- **AI 人格** — 记住你、按角色说话、陪你专注做事  
-
-当前版本为 **V0.1**：桌宠已经能在桌面上“活起来”。AI 对话、深度养成、房间/换装玩法、小游戏等将在后续版本加入。
+**毛毛 AI 桌宠**（也可叫《小爪陪伴计划》）是一款 Windows 桌面陪伴程序。毛毛不只是循环动图，而是长期桌面伙伴：有情绪、饥饿、性格、房间、换装、任务、小游戏、日记、梦境、探索，以及可选的云端 AI。
 
 一句话定位：
 
 > **桌宠 = 陪伴 + 养成 + 互动 + 小游戏 + 桌面工具 + AI 人格**
 
----
-
-## 功能
-
-### V0.1 已实现
-
-| 模块 | 状态 |
-|------|------|
-| 无边框透明置顶窗口（不进任务栏） | 已完成 |
-| 透明 PNG 序列帧动画 | 已完成 |
-| 状态机：Idle / Walk / Sleep / Drag / Click | 已完成 |
-| 点击反应 + 连点升级文案 | 已完成 |
-| 拖拽与落地反馈 | 已完成 |
-| 随机待机行为与气泡 | 已完成 |
-| 完整产品右键菜单（多数仍为占位） | 已完成 |
-| 应用图标（来自 `picture/icon.png`） | 已完成 |
-| 缺少帧时自动占位绘制 | 已完成 |
-
-### 版本规划
-
-| 版本 | 重点 |
-|------|------|
-| **V0.2** | 饥饿、心情、精力、好感、喂食、摸摸、睡觉、经验/金币 |
-| **V0.3** | 小游戏、每日任务、成就、换装、房间与家具、图鉴、随机事件 |
-| **V0.4** | AI 聊天、长期记忆、日记、主动搭话、人格引擎 |
-| **V1.0** | 完整生态：探索、多宠物、季节活动、桌面工具（番茄钟、轻提醒） |
-
-设计原则：
+设计优先级：
 
 > **生命感 > 互动感 > 养成感 > 游戏性 > 数值系统**  
-> 不要做成挂在桌面上的纯肝度手游。
+> 不要做成贴在桌面上的肝度手游。不做宠物死亡。
+
+数据文件（与 exe 同目录，方便便携）：
+
+- `save.json` — 完整游戏存档  
+- `memory.json` — AI 长期记忆
 
 ---
 
-## 展示与品牌素材
+## 功能一览
+
+| 支柱 | 内容 |
+|------|------|
+| **存在感** | 透明置顶窗口、不进任务栏、序列帧与表情 |
+| **生命感** | 走动 / 跑 / 跳 / 趴 / 哈欠 / 伸懒腰 / 睡觉；追鼠标；躲角落；边缘探头 |
+| **即时反馈** | 靠近注视、点击连点文案、拖拽方向台词、落地、可点击气泡 |
+| **养成** | 饱腹 / 心情 / 精力 / 清洁 / 好感 / 幸运 / 等级 / 金币；喂食；分区摸摸；睡觉；离线衰减；登录签到 |
+| **成长** | 成长阶段 + 功能解锁；每日任务；成就（含隐藏） |
+| **装扮与家** | 服装 + 帽子图鉴；家具带加成；墙纸 / 季节主题 |
+| **玩法** | 接小鱼、躲障碍、打地鼠、猜表情 |
+| **AI 与故事** | 本地人格对话（可选 OpenAI 兼容云端）；记忆；日记；梦境 |
+| **世界** | 探索地图与掉落；第二只宠物关系（Lv.30） |
+| **桌面工具** | 25 分钟专注陪伴；待办；喝水 / 久坐 / 网络提醒；天气（Open-Meteo） |
+| **陪伴感** | 生日；按时段问候；主动气泡；打扰模式与恶作剧档位 |
+
+### 等级解锁
+
+| 等级 | 解锁 |
+|-----:|------|
+| 5 | 换装 / 帽子 |
+| 10 | 房间 |
+| 12 | 世界探索 |
+| 15 | 小游戏 |
+| 20 | AI 聊天 |
+| 30 | 第二只宠物 |
+
+成长阶段：**幼年期**（&lt;10）→ **成长期**（&lt;20）→ **成熟期**（&lt;30）→ **特别形态**（30+）。
+
+### 仍偏软 / 受美术限制（如实说明）
+
+| 项目 | 说明 |
+|------|------|
+| 服装 / 帽子真实分层贴图 | 数据与图鉴可装备，尚未做独立贴图层 |
+| 托盘图标 / 鼠标穿透 | 尚未实现 |
+| 更深层系统挂钩（下载、CPU 发热） | 目前为网络与空闲提醒 |
+
+---
+
+## 展示与素材
 
 | 素材 | 路径 | 用途 |
 |------|------|------|
 | 展示图 1 | [`picture/Display Images1.png`](picture/Display%20Images1.png) | 角色 + 气泡 |
 | 展示图 2 | [`picture/Display Images2.png`](picture/Display%20Images2.png) | 桌宠 + 右键菜单 |
-| 应用图标 | [`picture/icon.png`](picture/icon.png) | 源图标（构建时转为 `.ico`） |
-| 动画参考 | [`picture/move.png`](picture/move.png) | 状态 / 互动概念图 |
-| 运行序列帧 | [`picture/deskpet_transparent_frames/`](picture/deskpet_transparent_frames/) | 透明抠图 PNG 序列 |
+| 应用图标 | [`picture/icon.png`](picture/icon.png) | 源图 → `Assets/icon.ico` |
+| 概念图 | [`picture/move.png`](picture/move.png) | 状态 / 互动参考 |
+| 运行序列帧 | [`picture/deskpet_transparent_frames/`](picture/deskpet_transparent_frames/) | 透明抠图 PNG |
 
 ---
 
@@ -80,37 +94,40 @@
 | 运行时 | .NET 8（Windows） |
 | IDE | Visual Studio 2022 |
 | 产出 | `MaomaoDesktopPet.exe` |
-| V0.1 架构 | 轻量单窗口 + 序列帧播放器 + 状态机 |
+| 存档 | `System.Text.Json` |
+| 可选 AI | OpenAI 兼容 Chat Completions HTTP |
+| 天气 | [Open-Meteo](https://open-meteo.com/)（无需 Key） |
 
-选择 WPF 的原因：透明窗口成熟、拖拽/点击好做、适合快速做出桌宠 MVP。
+架构：透明 `MainWindow` 外壳 + `PetController` / 序列帧管线 + `AppServices` 领域层（养成、AI、探索、梦境、天气等）+ `Views/` 功能面板。
 
 ---
 
 ## 环境要求
 
 - Windows 10 / 11  
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)（或安装了 .NET 桌面开发工作负载的 VS2022）  
-- 可选：Visual Studio 2022 用于调试与发布  
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) **或** 安装了 **.NET 桌面开发** 工作负载的 Visual Studio 2022  
+- 网络可选（天气 / 云端 AI）
 
 ---
 
 ## 快速开始
 
-### 方式 A — Visual Studio 2022
+### Visual Studio 2022
 
 1. 打开 `MaomaoDesktopPet.sln`  
 2. 选择 **Debug** 或 **Release**  
-3. 按 **F5**（或“生成 → 生成解决方案”）  
-4. 毛毛会出现在屏幕右下角附近  
+3. 按 **F5**（或「生成 → 生成解决方案」）  
+4. 首次启动会进入引导（主人名、宠物名、性格、生日）  
+5. 毛毛出现在屏幕右下角附近  
 
-### 方式 B — 命令行
+### 命令行
 
 ```powershell
 cd "C:\Projects\Maomao AI Desktop Pet"
 dotnet run --project src\MaomaoDesktopPet -c Release
 ```
 
-Release 构建后的 exe：
+Release 可执行文件：
 
 ```text
 src\MaomaoDesktopPet\bin\Release\net8.0-windows\MaomaoDesktopPet.exe
@@ -118,51 +135,83 @@ src\MaomaoDesktopPet\bin\Release\net8.0-windows\MaomaoDesktopPet.exe
 
 ---
 
-## 使用说明（V0.1）
+## 使用说明
+
+### 直接与桌宠互动
 
 | 操作 | 效果 |
 |------|------|
-| **左键点击** | 点击反应（从「嗯？」到狂点文案） |
-| **拖拽** | 抓起/滑动帧 + 台词；松手播放落地 |
-| **右键** | 完整菜单（互动 / 喂食 / 摸摸 / 游戏 / 聊天 / 换装 / 房间 …） |
-| **待机** | 偶尔走动、睡觉或冒气泡 |
-| **重新加载动画** | 不重启程序即可重新扫描帧目录 |
-| **退出** | 关闭程序 |
+| **鼠标靠近** | 好奇 / hover 表情 |
+| **左键点击** | 「嗯？」→ 连点 → 狂点文案 |
+| **拖拽** | 「诶诶诶！」、左右台词、落地「啪！」 |
+| **点击气泡** | 有动作的气泡会打开喂食 / 游戏 / 聊天 / 梦境等 |
+| **待机** | 走、跑、跳、睡、伸懒腰、追鼠标、躲藏、探头、自言自语 |
+| **右键** | 完整产品菜单 |
 
-尚未实现的菜单项会短暂显示「马上就来～」。
+### 右键菜单（主要项）
+
+状态与任务 · 我们的关系 · 摸摸 · 喂食 · 玩游戏 · 聊天 · 专注 · 待办 · 换衣服 · 房间 · 探索 · 第二只宠物 · 背包 · 收藏图鉴 · 日记 · 成就 · 睡觉 · 天气 · 重新加载动画 · 设置 · 退出  
+
+### 设置要点
+
+- 主人 / 宠物名字，性格（黏人 / 傲娇 / 软萌 / 沙雕 / 学霸 / 懒懒）  
+- 打扰模式：**安静** / **陪伴** / **活跃**  
+- 恶作剧：**关闭** / **轻度** / **完整**  
+- 喝水提醒、久坐提醒、网络状态互动  
+- 可选云端 AI：服务商预设（OpenAI / DeepSeek / 通义 / Ollama）、API Base、Key、Model、温度、Max Tokens、**测试连接**  
+- 记忆与存档保存在 exe 同目录（`save.json` + `memory.json`）
+
+### 小游戏（Lv.15 起）
+
+1. **接小鱼** — ←→ 或 A D 移动  
+2. **躲障碍** — 空格 / W 跳跃  
+3. **打地鼠** — 限时点击地鼠  
+4. **猜表情** — 选择正确情绪  
+
+通关可获得金币、经验与心情。
+
+### 核心循环
+
+```text
+互动 → 爱心 / 金币 / 经验 → 养成 / 装扮 / 房间 → 解锁新内容 → 新互动 → 循环
+```
+
+食物包括：小鱼干、牛奶、饼干、蛋糕、草莓、苹果、糖果、猫罐头、神秘料理，以及黑暗料理（心情 −20 的整活）。
 
 ---
 
 ## 动画资源
 
-序列帧放在**扁平目录**（不是按子文件夹）：
+序列帧放在**扁平目录**（构建时复制到 `Assets\Pet\`）：
 
 ```text
 picture\deskpet_transparent_frames\
 ```
 
-编译时会复制到输出目录的 `Assets\Pet\`。
+### 前缀 → 行为（共 59 帧）
 
-### 文件名前缀 → 状态
+| 前缀 | 行为 |
+|------|------|
+| `idle_` / `space_out_` | 待机 / 发呆 |
+| `walk_` / `run_` / `spin_` | 移动 |
+| `jump_01_` / `jump_desk_` | 跳跃 |
+| `sleep_` / `yawn_` / `stretch_` / `lie_down_` / `sunbath_` | 休息 |
+| `chase_` / `hide_` / `climb_window_` / `catch_butterfly_` | 桌面嬉戏 |
+| `clean_` / `drink_` / `play_tail_` / `play_toy_` / `sneeze_` / `look_window_` | 日常生活 |
+| `eat_fish_` / `eat_milk_` / `eat_cake_` / `eat_strawberry_` / `eat_snack_` | 喂食 |
+| `inter_drag_*` / `inter_drop_` / `inter_click_` / `inter_mash_` / `inter_hover_` | 输入互动 |
+| `exp_*` | 表情 |
+| `talk_` / `find_item_` / `dream_` | 说话 / 事件 / 梦境 |
+| `weather_rain_` / `weather_snow_` / `weather_sunny_` | 天气 |
+| `time_morning_` / `time_noon_` / `time_evening_` / `time_night_` | 时段 |
 
-| 前缀 | 宠物状态 |
-|------|----------|
-| `idle_` | 待机 |
-| `walk_` | 走动 |
-| `sleep_` | 睡觉 |
-| `inter_drag_hold_` / `inter_drag_slide_` | 拖拽 |
-| `inter_drop_` | 拖拽落地 |
-| `inter_click_` | 点击 |
-| `inter_mash_` | 狂点 |
-| `run_` / `jump_` / `yawn_` / `stretch_` / `lie_down_` / `exp_*` / `inter_hover_*` | 预留给后续行为 |
-
-命名示例：`idle_01_cutout.png`、`walk_02_cutout.png`。
+命名示例：`idle_01_cutout.png`、`eat_fish_01_cutout.png`。
 
 建议：
 
-- 使用真正的 **Alpha 透明**（不要只是白底画上去）。  
-- 大图运行时会按约 280px 宽度解码以节省内存。  
-- 增改 PNG 后请重新编译，或使用菜单「重新加载动画」。
+- 使用真正的 **Alpha 透明**（当前 cutout 已带透明通道）  
+- 运行时按约 320px 宽度解码（源图 2048²）  
+- 替换 PNG 后：重新编译，或使用「重新加载动画」
 
 ---
 
@@ -171,88 +220,71 @@ picture\deskpet_transparent_frames\
 ```text
 Maomao AI Desktop Pet/
 ├── MaomaoDesktopPet.sln
-├── README.md                 # 英文（默认）
-├── README.zh-CN.md           # 中文
+├── README.md                      # 英文（默认）
+├── README.zh-CN.md                # 中文
+├── .gitignore
 ├── picture/
 │   ├── Display Images1.png
 │   ├── Display Images2.png
 │   ├── icon.png
 │   ├── move.png
 │   └── deskpet_transparent_frames/
-├── docs/superpowers/specs/   # 设计说明
+├── docs/superpowers/
+│   ├── specs/                     # 设计说明
+│   └── plans/                     # 实施计划
 └── src/MaomaoDesktopPet/
     ├── Assets/
-    │   ├── icon.ico          # 应用图标
-    │   └── Pet/              # 复制后的帧与说明
-    ├── Core/
-    │   ├── PetState.cs
-    │   ├── PetController.cs
-    │   ├── SpriteLoader.cs
-    │   ├── SpriteAnimator.cs
-    │   └── PlaceholderFactory.cs
-    ├── MainWindow.xaml(.cs)  # 透明桌宠窗口 + 菜单
+    │   ├── icon.ico
+    │   └── Pet/                   # 复制后的序列帧
+    ├── Core/                      # 状态、播放器、加载器、控制器
+    ├── Models/                    # PetData、图鉴、解锁规则
+    ├── Services/                  # 养成、AI、任务、探索、天气等
+    ├── Views/                     # 功能面板 + 小游戏
+    ├── MainWindow.xaml(.cs)       # 透明桌宠外壳 + 菜单
     ├── App.xaml(.cs)
     └── MaomaoDesktopPet.csproj
 ```
 
 ---
 
-## 设计理念
-
-毛毛应该像是**住在电脑里的小生命**，而不是贴在桌面上的肝度手游。
-
-优先级：
-
-1. 生命感（待机动作、气泡、时间感）  
-2. 即时反馈（点击 / 拖拽 / 靠近）  
-3. 养成循环（喂食、心情、好感）  
-4. 趣味扩展（小游戏、房间、换装）  
-5. 数值（经验、金币、图鉴）
-
-避免：不停弹窗、饿死惩罚、或“几天不上线就全毁”。
-
-长时间没打开后，更希望是：
-
-> 「你回来啦！我有点想你。」  
-> ——而不是——  
-> 「你的宠物饿死了。」
-
----
-
-## 产品愿景（功能地图）
+## 产品功能地图
 
 ```text
 毛毛
-├── 日常互动（摸摸、喂食、点击、拖拽、事件）
+├── 日常互动（摸摸、喂食、点击、拖拽、气泡、事件）
 ├── AI 大脑（对话、记忆、人格、主动搭话）
-├── 养成成长（属性、等级解锁）
-├── 换装与房间
-├── 小游戏与任务
+├── 养成成长（属性、等级解锁、任务、成就）
+├── 换装与房间（服装、帽子、家具加成、主题）
+├── 小游戏
 ├── 故事（日记、梦境、回忆）
-├── 桌面工具（专注计时、轻提醒）
-└── 世界（探索、多宠物、季节）
+├── 桌面工具（专注、待办、轻提醒、天气）
+└── 世界（探索、第二只宠物、季节 / 生日）
 ```
 
-规格说明：[`docs/superpowers/specs/2026-09-30-maomao-v01-design.md`](docs/superpowers/specs/2026-09-30-maomao-v01-design.md)
+相关文档：
+
+- [`docs/superpowers/specs/2026-09-30-maomao-v01-design.md`](docs/superpowers/specs/2026-09-30-maomao-v01-design.md)  
+- [`docs/superpowers/plans/2026-10-08-full-feature-landing.md`](docs/superpowers/plans/2026-10-08-full-feature-landing.md)
 
 ---
 
 ## 本地开发提示
 
-- V0.1 改动优先保证**生命感与手感**。  
-- 新帧放到 `picture/deskpet_transparent_frames/`，前缀清晰。  
-- 不要提交 `bin/`、`obj/`、`.vs/`（已在 `.gitignore`）。  
-- 后续加 AI / 房间 / 游戏时，尽量拆成可测的小模块。
+- 优先保证**生命感与操作手感**  
+- 新帧放到 `picture/deskpet_transparent_frames/`，前缀清晰  
+- 不要提交 `bin/`、`obj/`、`.vs/`（见 `.gitignore`）  
+- 新系统放进 `Services/`，UI 保持在 `Views/` 薄层  
+- 云端 AI Key 只存在本地存档 / 设置中，切勿提交密钥  
 
 ---
 
 ## 许可证
 
-尚未指定。公开发布前请补充 LICENSE。
+尚未指定。公开发布前请补充 `LICENSE`。
 
 ---
 
 ## 语言版本
 
-- **默认 README（英文）：** [`README.md`](README.md)  
-- **中文 README：** [`README.zh-CN.md`](README.zh-CN.md)
+- **默认（英文）：** [`README.md`](README.md)  
+- **中文：** [`README.zh-CN.md`](README.zh-CN.md)

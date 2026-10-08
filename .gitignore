@@ -73,6 +73,11 @@ Desktop.ini
 *.p12
 appsettings.*.local.json
 
+## Portable save next to exe (also appears under bin when debugging)
+**/save.json
+**/memory.json
+**/ai-config.local.json
+
 ## Local tool caches
 .dotnet/
 .packages/
