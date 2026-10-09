@@ -31,8 +31,6 @@ public sealed class ExploreService
             return "还在外面冒险呢，等等我回来～";
         if (!GameCatalog.Maps.TryGetValue(mapId, out var map))
             return "未知地图";
-        if (_data.Level < map.MinLevel)
-            return $"这里太远啦，需要 Lv.{map.MinLevel}";
         if (map.Minutes <= 0)
             return "房间不用出门啦";
 

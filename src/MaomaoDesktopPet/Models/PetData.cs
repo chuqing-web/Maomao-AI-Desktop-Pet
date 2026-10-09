@@ -219,16 +219,6 @@ public sealed class CatalogItem
     public string? Special { get; set; }
 }
 
-public static class UnlockRules
-{
-    public const int OutfitLevel = 5;
-    public const int RoomLevel = 10;
-    public const int GamesLevel = 15;
-    public const int AiLevel = 20;
-    public const int ExploreLevel = 12;
-    public const int SecondPetLevel = 30;
-}
-
 public static class GameCatalog
 {
     public static readonly CatalogItem[] Foods =
@@ -286,13 +276,13 @@ public static class GameCatalog
         ["toybox"] = ("玩具箱", "无聊时自己玩", 75, "bored")
     };
 
-    public static readonly Dictionary<string, (string Name, string Desc, int Minutes, int MinLevel)> Maps = new()
+    public static readonly Dictionary<string, (string Name, string Desc, int Minutes)> Maps = new()
     {
-        ["room"] = ("房间", "安全的小窝", 0, 1),
-        ["town"] = ("小镇", "逛逛商店街", 3, 12),
-        ["forest"] = ("森林", "蘑菇与松果", 5, 15),
-        ["beach"] = ("海边", "听听海浪", 6, 20),
-        ["stars"] = ("星空", "摘一颗小星星", 8, 25)
+        ["room"] = ("房间", "安全的小窝", 0),
+        ["town"] = ("小镇", "逛逛商店街", 3),
+        ["forest"] = ("森林", "蘑菇与松果", 5),
+        ["beach"] = ("海边", "听听海浪", 6),
+        ["stars"] = ("星空", "摘一颗小星星", 8)
     };
 
     public static readonly (string Id, string Name)[] CompanionPets =

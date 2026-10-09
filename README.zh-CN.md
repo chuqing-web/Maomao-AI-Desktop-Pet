@@ -4,15 +4,24 @@
 
 > 住在 Windows 桌面上的小伙伴——可爱、可互动，并逐步成长为完整的 AI 桌宠。
 
-<p align="center">
-  <img src="picture/Display%20Images1.png" alt="毛毛角色展示" width="520" />
-</p>
-<p align="center"><sub>认识毛毛 —— 你的桌面小伙伴</sub></p>
+<br/>
 
-<p align="center">
-  <img src="picture/Display%20Images2.png" alt="桌面右键菜单" width="360" />
-</p>
-<p align="center"><sub>右键桌宠打开完整菜单</sub></p>
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="picture/readme-showcase-1.png" alt="毛毛角色展示" width="300" />
+      <br/>
+      <sub>认识毛毛</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="picture/readme-showcase-2.png" alt="桌面右键菜单" width="300" />
+      <br/>
+      <sub>右键菜单</sub>
+    </td>
+  </tr>
+</table>
+
+<br/>
 
 ---
 
@@ -44,26 +53,15 @@
 | **生命感** | 走动 / 跑 / 跳 / 趴 / 哈欠 / 伸懒腰 / 睡觉；追鼠标；躲角落；边缘探头 |
 | **即时反馈** | 靠近注视、点击连点文案、拖拽方向台词、落地、可点击气泡 |
 | **养成** | 饱腹 / 心情 / 精力 / 清洁 / 好感 / 幸运 / 等级 / 金币；喂食；分区摸摸；睡觉；离线衰减；登录签到 |
-| **成长** | 成长阶段 + 功能解锁；每日任务；成就（含隐藏） |
+| **成长** | 等级与成长阶段（仅展示进度）；每日任务；成就（含隐藏）；**功能全部开放，无等级门槛** |
 | **装扮与家** | 服装 + 帽子图鉴；家具带加成；墙纸 / 季节主题 |
 | **玩法** | 接小鱼、躲障碍、打地鼠、猜表情 |
 | **AI 与故事** | 本地人格对话（可选 OpenAI 兼容云端）；记忆；日记；梦境 |
-| **世界** | 探索地图与掉落；第二只宠物关系（Lv.30） |
+| **世界** | 探索地图与掉落；第二只宠物关系 |
 | **桌面工具** | 25 分钟专注陪伴；待办；喝水 / 久坐 / 网络提醒；天气（Open-Meteo） |
 | **陪伴感** | 生日；按时段问候；主动气泡；打扰模式与恶作剧档位 |
 
-### 等级解锁
-
-| 等级 | 解锁 |
-|-----:|------|
-| 5 | 换装 / 帽子 |
-| 10 | 房间 |
-| 12 | 世界探索 |
-| 15 | 小游戏 |
-| 20 | AI 聊天 |
-| 30 | 第二只宠物 |
-
-成长阶段：**幼年期**（&lt;10）→ **成长期**（&lt;20）→ **成熟期**（&lt;30）→ **特别形态**（30+）。
+成长阶段（装饰用）：**幼年期**（&lt;10）→ **成长期**（&lt;20）→ **成熟期**（&lt;30）→ **特别形态**（30+）。
 
 ### 仍偏软 / 受美术限制（如实说明）
 
@@ -79,8 +77,9 @@
 
 | 素材 | 路径 | 用途 |
 |------|------|------|
-| 展示图 1 | [`picture/Display Images1.png`](picture/Display%20Images1.png) | 角色 + 气泡 |
-| 展示图 2 | [`picture/Display Images2.png`](picture/Display%20Images2.png) | 桌宠 + 右键菜单 |
+| 展示图 1（原图） | [`picture/Display Images1.png`](picture/Display%20Images1.png) | 角色 + 气泡 |
+| 展示图 2（原图） | [`picture/Display Images2.png`](picture/Display%20Images2.png) | 桌宠 + 右键菜单 |
+| README 双图 | [`picture/readme-showcase-1.png`](picture/readme-showcase-1.png) / [`2`](picture/readme-showcase-2.png) | 统一 480×640 文档用图 |
 | 应用图标 | [`picture/icon.png`](picture/icon.png) | 源图 → `Assets/icon.ico` |
 | 概念图 | [`picture/move.png`](picture/move.png) | 状态 / 互动参考 |
 | 运行序列帧 | [`picture/deskpet_transparent_frames/`](picture/deskpet_transparent_frames/) | 透明抠图 PNG |
@@ -163,7 +162,7 @@ src\MaomaoDesktopPet\bin\Release\net8.0-windows\MaomaoDesktopPet.exe
 - 可选云端 AI：服务商预设（OpenAI / DeepSeek / 通义 / Ollama）、API Base、Key、Model、温度、Max Tokens、**测试连接**  
 - 记忆与存档保存在 exe 同目录（`save.json` + `memory.json`）
 
-### 小游戏（Lv.15 起）
+### 小游戏
 
 1. **接小鱼** — ←→ 或 A D 移动  
 2. **躲障碍** — 空格 / W 跳跃  
@@ -226,8 +225,8 @@ Maomao AI Desktop Pet/
 ├── README.zh-CN.md                # 中文
 ├── .gitignore
 ├── picture/
-│   ├── Display Images1.png
-│   ├── Display Images2.png
+│   ├── Display Images1.png / Display Images2.png
+│   ├── readme-showcase-1.png / readme-showcase-2.png  # 统一 480×640
 │   ├── icon.png
 │   ├── move.png
 │   └── deskpet_transparent_frames/
@@ -255,7 +254,7 @@ Maomao AI Desktop Pet/
 毛毛
 ├── 日常互动（摸摸、喂食、点击、拖拽、气泡、事件）
 ├── AI 大脑（对话、记忆、人格、主动搭话）
-├── 养成成长（属性、等级解锁、任务、成就）
+├── 养成成长（属性、等级进度、任务、成就；功能全开放）
 ├── 换装与房间（服装、帽子、家具加成、主题）
 ├── 小游戏
 ├── 故事（日记、梦境、回忆）

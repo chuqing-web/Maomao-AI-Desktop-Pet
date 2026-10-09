@@ -230,7 +230,7 @@ public partial class MainWindow : Window
     private void ChaseMouse()
     {
         if (AppServices.Data.Settings.MischiefMode == MischiefMode.Off) return;
-        var mouse = GetMouseScreen();
+        var mouse = GetMouseScreenDip();
         Left = Math.Clamp(mouse.X - Width / 2, SystemParameters.WorkArea.Left, SystemParameters.WorkArea.Right - Width);
         Top = Math.Clamp(mouse.Y - Height / 2, SystemParameters.WorkArea.Top, SystemParameters.WorkArea.Bottom - Height);
     }
@@ -252,10 +252,18 @@ public partial class MainWindow : Window
         Top = work.Bottom - Height - 8;
     }
 
-    private static Point GetMouseScreen()
+    /// <summary>Cursor position in WPF DIPs (matches Window.Left/Top).</summary>
+    private Point GetMouseScreenDip()
     {
         GetCursorPos(out var p);
-        return new Point(p.X, p.Y);
+        return DeviceToDip(new Point(p.X, p.Y));
+    }
+
+    private Point DeviceToDip(Point devicePoint)
+    {
+        var source = PresentationSource.FromVisual(this);
+        if (source?.CompositionTarget is null) return devicePoint;
+        return source.CompositionTarget.TransformFromDevice.Transform(devicePoint);
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -339,7 +347,7 @@ public partial class MainWindow : Window
         _dragging = true;
         _movedEnough = false;
         _dragStart = e.GetPosition(this);
-        _dragScreenOrigin = PointToScreen(_dragStart);
+        _dragScreenOrigin = GetMouseScreenDip();
         CaptureMouse();
     }
 
@@ -363,10 +371,12 @@ public partial class MainWindow : Window
             _movedEnough = true;
             _pet.BeginDrag();
         }
-        var screen = PointToScreen(pos);
-        Left = screen.X - _dragStart.X;
-        Top = screen.Y - _dragStart.Y;
-        _pet.UpdateDragSpeech(screen.X - _dragScreenOrigin.X);
+
+        // PointToScreen / GetCursorPos are device pixels; Left/Top are DIPs — convert first.
+        var screenDip = GetMouseScreenDip();
+        Left = screenDip.X - _dragStart.X;
+        Top = screenDip.Y - _dragStart.Y;
+        _pet.UpdateDragSpeech(screenDip.X - _dragScreenOrigin.X);
     }
 
     private void Window_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

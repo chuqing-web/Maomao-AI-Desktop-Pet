@@ -18,7 +18,6 @@ public static class FeatureWindows
         panel.Children.Add(UiKit.P($"关系：{d.RelationTitle}　亲密度 {d.Affection}　金币 {d.Coins}　经验 {d.Exp}/{CareService.ExpToNext(d.Level)}"));
         panel.Children.Add(UiKit.P($"性格：{d.Personality}　情绪：{d.Emotion}　幸运：{d.Luck}"));
         panel.Children.Add(UiKit.P($"相识 {d.DaysTogether} 天　连续登录：{string.Concat(Enumerable.Repeat("🐾", Math.Min(7, Math.Max(1, d.LoginStreak))))} ({d.LoginStreak})"));
-        panel.Children.Add(UiKit.P($"解锁：换装Lv{UnlockRules.OutfitLevel}/房间{UnlockRules.RoomLevel}/探索{UnlockRules.ExploreLevel}/游戏{UnlockRules.GamesLevel}/AI{UnlockRules.AiLevel}/二宠{UnlockRules.SecondPetLevel}"));
         panel.Children.Add(UiKit.P($"🍖 饱腹 {d.Hunger:0}"));
         panel.Children.Add(UiKit.Bar(d.Hunger));
         panel.Children.Add(UiKit.P($"❤️ 心情 {d.Mood:0}"));
@@ -703,7 +702,7 @@ public static class FeatureWindows
         }
         foreach (var (id, info) in GameCatalog.Maps.Where(m => m.Value.Minutes > 0))
         {
-            panel.Children.Add(UiKit.Btn($"{info.Name}（{info.Minutes}分钟 · Lv.{info.MinLevel}）\n{info.Desc}", (_, _) =>
+            panel.Children.Add(UiKit.Btn($"{info.Name}（约 {info.Minutes} 分钟）\n{info.Desc}", (_, _) =>
             {
                 var msg = AppServices.Explore.Start(id) ?? "出发失败";
                 onBubble?.Invoke(msg);
@@ -784,7 +783,7 @@ public static class FeatureWindows
         }
         else
         {
-            panel.Children.Add(UiKit.P("选择一位新伙伴入住吧（Lv.30 解锁）"));
+            panel.Children.Add(UiKit.P("选择一位新伙伴入住吧"));
             foreach (var (id, name) in GameCatalog.CompanionPets)
             {
                 panel.Children.Add(UiKit.Btn(name, (_, _) =>

@@ -4,15 +4,24 @@
 
 > A living companion on your Windows desktop — cute, interactive, and growing into a full AI pet.
 
-<p align="center">
-  <img src="picture/Display%20Images1.png" alt="Maomao character showcase" width="520" />
-</p>
-<p align="center"><sub>Meet Maomao — your desktop companion</sub></p>
+<br/>
 
-<p align="center">
-  <img src="picture/Display%20Images2.png" alt="Desktop right-click menu" width="360" />
-</p>
-<p align="center"><sub>Right-click the pet to open the full menu</sub></p>
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="picture/readme-showcase-1.png" alt="Maomao character showcase" width="300" />
+      <br/>
+      <sub>Meet Maomao</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="picture/readme-showcase-2.png" alt="Desktop right-click menu" width="300" />
+      <br/>
+      <sub>Right-click menu</sub>
+    </td>
+  </tr>
+</table>
+
+<br/>
 
 ---
 
@@ -44,26 +53,15 @@ Data files (next to the exe):
 | **Life** | Idle walk / run / jump / lie / yawn / stretch / sleep; chase mouse; hide in corner; peek from edge |
 | **Input** | Hover look, click → mash lines, drag with direction speech, drop landing, clickable speech bubbles |
 | **Care** | Hunger / mood / energy / cleanliness / affection / luck / level / coins; feed; zone petting; sleep; offline decay; login streak |
-| **Growth** | Level stages + feature unlocks; daily quests; achievements (incl. hidden) |
+| **Growth** | Level & growth stage (progress only); daily quests; achievements (incl. hidden); **all features open — no level gates** |
 | **Dress & home** | Outfits + hats catalog; room furniture with buffs; wallpapers / seasonal themes |
 | **Play** | Catch fish, dodge, whack-a-mole, guess mood |
 | **AI & story** | Local personality chat (+ optional OpenAI-compatible API); memories; diary; dreams |
-| **World** | Explore maps & loot; second pet relations (Lv.30) |
+| **World** | Explore maps & loot; second pet relations |
 | **Desktop tools** | 25-min focus companion; todos; water / sit / network reminders; weather (Open-Meteo) |
 | **Social feel** | Birthdays; greetings by time of day; proactive bubbles; disturb & mischief modes |
 
-### Level unlocks
-
-| Level | Unlocks |
-|------:|---------|
-| 5 | Outfits / hats |
-| 10 | Room |
-| 12 | World exploration |
-| 15 | Mini-games |
-| 20 | AI chat |
-| 30 | Second pet |
-
-Growth stages: **Juvenile** (&lt;10) → **Growing** (&lt;20) → **Mature** (&lt;30) → **Special** (30+).
+Growth stages (cosmetic): **Juvenile** (&lt;10) → **Growing** (&lt;20) → **Mature** (&lt;30) → **Special** (30+).
 
 ### Soft / art-limited (honest gaps)
 
@@ -79,8 +77,9 @@ Growth stages: **Juvenile** (&lt;10) → **Growing** (&lt;20) → **Mature** (&l
 
 | Asset | Path | Use |
 |-------|------|-----|
-| Showcase 1 | [`picture/Display Images1.png`](picture/Display%20Images1.png) | Character + bubble |
-| Showcase 2 | [`picture/Display Images2.png`](picture/Display%20Images2.png) | Pet + context menu |
+| Showcase 1 (source) | [`picture/Display Images1.png`](picture/Display%20Images1.png) | Character + bubble |
+| Showcase 2 (source) | [`picture/Display Images2.png`](picture/Display%20Images2.png) | Pet + context menu |
+| README pair | [`picture/readme-showcase-1.png`](picture/readme-showcase-1.png) / [`2`](picture/readme-showcase-2.png) | Unified 480×640 for docs |
 | App icon | [`picture/icon.png`](picture/icon.png) | Source → `Assets/icon.ico` for the exe |
 | Concept sheet | [`picture/move.png`](picture/move.png) | States / interactions reference |
 | Runtime frames | [`picture/deskpet_transparent_frames/`](picture/deskpet_transparent_frames/) | Transparent cutout PNG sequence |
@@ -163,7 +162,7 @@ Status & quests · Relationship · Pet · Feed · Games · Chat · Focus · Todo
 - Optional cloud AI: presets (OpenAI / DeepSeek / 通义 / Ollama), API base, key, model, temperature, max tokens, **Test connection**  
 - Memories & save live beside the exe (`save.json` + `memory.json`)
 
-### Mini-games (from Lv.15)
+### Mini-games
 
 1. **Catch fish** — move with ←→ / A D  
 2. **Dodge** — Space / W to jump  
@@ -226,8 +225,8 @@ Maomao AI Desktop Pet/
 ├── README.zh-CN.md                # Chinese
 ├── .gitignore
 ├── picture/
-│   ├── Display Images1.png
-│   ├── Display Images2.png
+│   ├── Display Images1.png / Display Images2.png
+│   ├── readme-showcase-1.png / readme-showcase-2.png  # unified 480×640
 │   ├── icon.png
 │   ├── move.png
 │   └── deskpet_transparent_frames/
@@ -255,7 +254,7 @@ Maomao AI Desktop Pet/
 Maomao
 ├── Daily interaction (pet, feed, click, drag, bubbles, events)
 ├── AI brain (chat, memory, personality, proactive talk)
-├── Care / growth (stats, level unlocks, quests, achievements)
+├── Care / growth (stats, level progress, quests, achievements; all features open)
 ├── Dress-up & room (outfits, hats, furniture buffs, themes)
 ├── Mini-games
 ├── Story (diary, dreams, memories)
